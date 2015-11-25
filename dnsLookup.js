@@ -2,10 +2,10 @@ var dns = require("dns");
 var url = require("wurl");
 
 var dnsIps = ["208.67.222.123","208.67.220.123"]
+var blockIP = "";
 
-
-dns.lookup("youporn.com", function (error, result) {
-  blockIP = result;
+dns.resolve("youporn.com", function (error, result) {
+  blockIP = result[0];
   console.log("blockIP=" + blockIP);
 })
 
@@ -14,15 +14,14 @@ dns.lookup("youporn.com", function (error, result) {
 // resolves a dns to it's ip and attaches it to the request of object as
 // dnsIP property
 function parseDnsIP (req, res, next) {
-  dns.setServers(dnsIps);
   if (req.body.url) {
     var hostname = url("hostname", req.body.url);
-    dns.lookup(hostname, function (error, result) {
+    dns.resolve(hostname, function (error, result) {
       if (error) {
         next(error);
       }
       if (result) {
-        req.dnsIP = result;
+        req.dnsIP = result[0];
       }
       next();
     });
