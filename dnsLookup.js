@@ -2,22 +2,26 @@ var dns = require("dns");
 var url = require("wurl");
 
 var dnsIps = ["208.67.222.123","208.67.220.123"]
-var blockIP = "146.112.61.106";
 
-dns.setServers(dnsIps);
+
+dns.lookup("youporn.com", function (error, result) {
+  blockIP = result;
+  console.log("blockIP=" + blockIP);
+})
 
 // dns lookup middleware
 // pre-requisite parsed body available by using body-parser
 // resolves a dns to it's ip and attaches it to the request of object as
 // dnsIP property
 function parseDnsIP (req, res, next) {
+  dns.setServers(dnsIps);
   if (req.body.url) {
     var hostname = url("hostname", req.body.url);
     dns.lookup(hostname, function (error, result) {
       if (error) {
         next(error);
       }
-      if (result && typeof result == "string") {
+      if (result) {
         req.dnsIP = result;
       }
       next();
