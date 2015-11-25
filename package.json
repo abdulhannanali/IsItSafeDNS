@@ -18,9 +18,10 @@
   "author": "Hannan Ali (abdulhannananali@outlook.com)",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "*",
+    "cors": "^2.7.1",
     "express": "^4.13.3",
     "morgan": "^1.6.1",
-    "wurl": "^2.0.1",
-    "body-parser": "*"
+    "wurl": "^2.0.1"
   }
 }

@@ -1,6 +1,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var morgan = require("morgan");
+var cors = require("cors");
 
 var dnsLookup = require("./dnsLookup");
 
@@ -9,6 +10,7 @@ var PORT = process.env.PORT || 8000;
 var app = express();
 
 app.use(morgan("dev", {}));
+app.use(cors());
 
 app.use(bodyParser.urlencoded({extended: false}));
 
