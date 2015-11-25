@@ -16,9 +16,9 @@ These are the routes to which you can query
 Post a url encoded body to this route
 
 **Parameters**
-* required
+* url (required) (example: https://ilovemylaptoplenovog5080.com/bestlaptopintheworld)
 
 
 #### NOT FOUND
 Any other route or method in an ideal situation is going to be a 404 Not Found
-error.
+error.x
