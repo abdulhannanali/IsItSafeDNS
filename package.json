@@ -4,7 +4,8 @@
   "description": "A server which resolves the url request to OpenDNS Family Shield in order to determine if they are safe",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "keywords": [
     "opendns",
