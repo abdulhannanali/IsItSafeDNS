@@ -17,7 +17,7 @@ function parseDnsIP (req, res, next) {
       if (error) {
         next(error);
       }
-      if (result) {
+      if (result && typeof result == "string") {
         req.dnsIP = result;
       }
       next();
