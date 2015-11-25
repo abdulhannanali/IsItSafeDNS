@@ -17,10 +17,10 @@ app.post("/", dnsLookup.parseDnsIP, (function(req, res, next) {
       next();
     }
     if (dnsLookup.isSafe(req.dnsIP)) {
-        res.send(true);
+        res.send("true");
     }
     else {
-      res.send(false);
+      res.send("false");
     }
 }));
 
