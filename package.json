@@ -1,0 +1,24 @@
+{
+  "name": "isitsafedns",
+  "version": "1.0.0",
+  "description": "A server which resolves the url request to OpenDNS Family Shield in order to determine if they are safe",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "opendns",
+    "family",
+    "filter",
+    "shield",
+    "server",
+    "http"
+  ],
+  "author": "Hannan Ali (abdulhannananali@outlook.com)",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.3",
+    "morgan": "^1.6.1",
+    "wurl": "^2.0.1"
+  }
+}
