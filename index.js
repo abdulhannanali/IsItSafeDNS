@@ -18,6 +18,7 @@ app.post("/", dnsLookup.parseDnsIP, (function(req, res, next) {
     if (!req.dnsIP) {
       next();
     }
+    console.log(req.dnsIP);
     if (dnsLookup.isSafe(req.dnsIP)) {
         res.send("true");
     }
