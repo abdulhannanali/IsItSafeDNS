@@ -36,6 +36,7 @@ app.use(function (req, res, next) {
 // dns look up error middleware
 app.use(function (error, req, res, next) {
   if (error.code == "ENOTFOUND" && error.syscall == "getaddrinfo") {
+    res.status(404);
     res.send("hostname not found");
   }
   else {
