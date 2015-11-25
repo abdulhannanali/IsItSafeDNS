@@ -4,9 +4,9 @@ var url = require("wurl");
 var dnsIps = ["208.67.222.123","208.67.220.123"]
 var blockIP = "";
 
+dns.setServers(dnsIps);
 dns.resolve("youporn.com", function (error, result) {
   blockIP = result[0];
-  console.log("blockIP=" + blockIP);
 })
 
 // dns lookup middleware
