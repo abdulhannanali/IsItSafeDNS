@@ -1,5 +1,7 @@
 # IsItSafeDNS
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/abdulhannanali/IsItSafeDNS.svg)](https://greenkeeper.io/)
+
 Looks up the OpenDNS family Shield dns
 
 **DEMO** : *https://floating-taiga-3043.herokuapp.com*
